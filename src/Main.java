@@ -9,7 +9,7 @@ public class Main {
 
     public static int[] fiboDpArray = new int[42];
 
-    public static String SPACE = " ";
+    public static final String SPACE = " ";
 
     public static void main(String[] args) throws IOException {
         init();
@@ -23,7 +23,7 @@ public class Main {
 
         for (int index = 0; index < lineSize; ++index) {
             st = new StringTokenizer(br.readLine());
-            int fiboNum = Integer.valueOf(st.nextToken());
+            int fiboNum = Integer.parseInt(st.nextToken());
             sb.append(fiboDpArray[fiboNum]).append(SPACE).append(fiboDpArray[fiboNum + 1]).append("\n");
         }
 
