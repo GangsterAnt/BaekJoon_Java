@@ -1,15 +1,0 @@
-
-7
-java:S1220""Move this file to a named package.8çßÆÎó1
-
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(œû¿Ø8õçÎó1
-P
-java:S1128"3Remove this unused import 'java.io.BufferedReader'.(€é²Å8‘õçÎó1
-O
-java:S1128"3Remove this unused import 'java.io.BufferedWriter'.(¬õº/8’õçÎó1
-S
-java:S1128"6Remove this unused import 'java.io.InputStreamReader'.(ãˆÎÉ8’õçÎó1
-T
-java:S1128"7Remove this unused import 'java.io.OutputStreamWriter'.(Ÿ“¸8’õçÎó1
-X
-java:S1128"6Remove this unused import 'java.util.StringTokenizer'.(ÈÄ¬ñşÿÿÿÿ8’õçÎó1
