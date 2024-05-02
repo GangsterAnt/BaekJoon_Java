@@ -128,3 +128,7 @@ Q.idea/sonarlint/securityhotspotstore/2/a/2a5b62fda5bc3c69218f868a24f160d439b141
 Q.idea/sonarlint/securityhotspotstore/3/0/30205a209c6ce77c4cfc19a09e6f57c588b7fb88,6/7/67eaf978e530588b1f14f51aeca296c2b659e272
 9
 	gitignore,6/f/6f819b366cb83f2e62d7b8b23b65c2e28c01306a
+P
+ src/sourceCode/novice/Q1008.java,f/4/f48b1a2d8b6af3c896566df79141003ad21e8e2e
+>
+src/.gitignore,9/3/93cbdd0973c9a7b59e5cef90a94300ab95fd66e5

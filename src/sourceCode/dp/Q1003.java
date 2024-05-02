@@ -13,33 +13,37 @@ import java.util.StringTokenizer;
 https://www.acmicpc.net/problem/1003
  */
 public class Q1003 {
+    public static int[] fiboDpArray = new int[42];
+
+    public static final String SPACE = " ";
 
     public void solution() throws IOException {
+        init();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st;
-        long fibonazziNumber;
+        StringBuilder sb = new StringBuilder();
 
-        long lineSize = Long.valueOf(br.readLine());
+        long lineSize = Long.parseLong(br.readLine());
+
+
         for (int index = 0; index < lineSize; ++index) {
             st = new StringTokenizer(br.readLine());
-            fibonazziNumber = Long.valueOf(st.nextToken());
-            bw.write(fibonazzi(fibonazziNumber));
+            int fiboNum = Integer.parseInt(st.nextToken());
+            sb.append(fiboDpArray[fiboNum]).append(SPACE).append(fiboDpArray[fiboNum + 1]).append("\n");
         }
 
+        bw.write(sb.toString());
         br.close();
         bw.flush();
         bw.close();
     }
 
-    private int fibonazzi(long num) {
-        if (num == 0) {
-            return 0;
+    public static void init() {
+        fiboDpArray[0] = 1;
+        fiboDpArray[1] = 0;
+        for (int i = 2; i < 42; ++i) {
+            fiboDpArray[i] = fiboDpArray[i - 1] + fiboDpArray[i - 2];
         }
-
-        if (num == 1) {
-            return 1;
-        }
-        return fibonazzi(num - 1) + fibonazzi(num - 2);
     }
 }
