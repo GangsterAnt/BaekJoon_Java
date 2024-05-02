@@ -1,21 +1,13 @@
 
 t
 java:S1104
-"WMake fiboDpArray a static final constant or non-public and provide accessors if needed.(³š¼´8ĞæÆÙñ1
-n
-java:S1104"QMake SPACE a static final constant or non-public and provide accessors if needed.(òÈøŞ8ĞæÆÙñ1
+"WMake fiboDpArray a static final constant or non-public and provide accessors if needed.(³š¼´8…éğÍó1
 N
 java:S1444
-"1Make this "public static fiboDpArray" field final(³š¼´8ĞæÆÙñ1
-H
-java:S1444"+Make this "public static SPACE" field final(òÈøŞ8ĞæÆÙñ1
+"1Make this "public static fiboDpArray" field final(³š¼´8…éğÍó1
 7
-java:S1220""Move this file to a named package.8ÑæÆÙñ1
-m
-java:S3008"PRename this field "SPACE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òÈøŞ8àæÆÙñ1
+java:S1220""Move this file to a named package.8ÃèÍó1
 :
 java:S2386
-"Make this member "protected".(³š¼´8àæÆÙñ1
-G	java:S106"+Replace this use of System.out by a logger.(ûÄÏ8ìæÆÙñ1
-[
-java:S2130"9Use "Integer.parseInt" for this string-to-int conversion.(äììûÿÿÿÿ8ñæÆÙñ1
+"Make this member "protected".(³š¼´8ˆéğÍó1
+G	java:S106"+Replace this use of System.out by a logger.(ûÄÏ8¡ñÍó1
