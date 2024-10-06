@@ -12,7 +12,7 @@ public class PalindromeNumber {
             return false;
         }
 
-        String input = Integer.valueOf(x).toString();
+        String input = Integer.toString(x);
 
         for (int i = 0; i < input.length() / 2; ++i) {
             if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
