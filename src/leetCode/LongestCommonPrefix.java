@@ -1,4 +1,4 @@
-package reetCode;
+package leetCode;
 
 /*
     https://leetcode.com/problems/longest-common-prefix/description/?envType=problem-list-v2&envId=avihny73

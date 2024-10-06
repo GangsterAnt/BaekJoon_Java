@@ -1,4 +1,4 @@
-package reetCode;
+package leetCode;
 
 public class RangeSumofBST {
 

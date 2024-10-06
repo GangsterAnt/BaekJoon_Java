@@ -1,4 +1,4 @@
-package reetCode;
+package leetCode;
 
 /*
     https://leetcode.com/problems/design-circular-deque/?envType=daily-question&envId=2024-09-28

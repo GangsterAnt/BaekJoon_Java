@@ -1,4 +1,4 @@
-package reetCode;
+package leetCode;
 
 // https://leetcode.com/problems/next-permutation/description/?envType=problem-list-v2&envId=avihny73
 public class NextPermutation {
