@@ -38,6 +38,21 @@ public class InsertDeleteGetRandomBigO1 {
     }
 }
 
+/*
+     Hashset, HashMap 의 put,contain, remove 등등은 해시값을 이용하므로 O(1)
+     arrayList의 인덱스 접근은 O(1), 삭제는 O(n)이지만 "마지막원소의 삭제" 는 O(1) 이므로.
+     현재 맵에 있는 원소들을 리스트에 넣자, 이때 key는 전달받은 값, 리스트의 인덱스 값을 value로 맵에 넣는다.
+
+     put은 맵과 리스트에 둘다 넣는다.
+
+     remove는 val과 list의 마지막 원소와 자리를 바꿔친다.
+     (이떄 리스트와 맵에서 모두 값을 바꿔쳐야함) #89~#92 참조
+
+     이후 맵과 리스트에서 모두 삭제한다.
+
+     랜덤은 리스트에서 랜덤하게 인덱스 뽑아서 리턴한다.
+ */
+
 class RandomizedSet {
     private Map<Integer, Integer> map; //value, valueList의 index
     private List<Integer> valueList;
