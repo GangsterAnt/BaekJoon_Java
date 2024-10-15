@@ -1,4 +1,4 @@
-package sourceCode.dp;
+package baekJoon.dp;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

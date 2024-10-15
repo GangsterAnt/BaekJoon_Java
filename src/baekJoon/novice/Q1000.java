@@ -1,4 +1,4 @@
-package sourceCode.novice;
+package baekJoon.novice;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
