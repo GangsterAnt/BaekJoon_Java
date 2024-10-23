@@ -32,17 +32,6 @@ class Solution3 {
     }
 }
 
-class Solution2 {
-    public static int findKthLargest(int[] nums, int k) {
-        List<Integer> numList = Arrays.stream(nums)
-                .boxed()
-                .collect(Collectors.toList());
-        Arrays.sort(nums);
-
-        return nums[nums.length - k];
-    }
-}
-
 class Solution {
     public static int findKthLargest(int[] nums, int k) {
         return quickSelect(nums, 0, nums.length - 1, nums.length - k);
