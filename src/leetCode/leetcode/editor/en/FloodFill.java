@@ -70,15 +70,112 @@ package leetCode.leetcode.editor.en;
 //? 912
 
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class FloodFill {
     public static void main(String[] args) {
         Solution solution = new FloodFill().new Solution();
+
+        //Input: image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, color = 2
+        int[][] image = new int[3][3];
+        int[][] ret;
+        image[0] = new int[]{1,1,1};
+        image[1] = new int[]{1,1,0};
+        image[2] = new int[]{1,0,1};
+        ret = solution.floodFill(image, 1, 1, 2);
+
+        //Input: image = [[0,0,0],[0,0,0]], sr = 0, sc = 0, color = 0
+        image = new int[2][3];
+        image[0] = new int[]{0,0,0};
+        image[1] = new int[]{0,0,0};
+        ret = solution.floodFill(image, 0, 0, 0);
+
+        ret = solution.floodFill(image, 1, 0, 2);
     }
     
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+
+        int m; //row
+        int n; //column
+        int sr;
+        int sc;
+        int targetColor;
+        int startColor;
+        int[][] image;
+        boolean[][] visited;
+        Queue<Pair> q;
+
     public int[][] floodFill(int[][] image, int sr, int sc, int color) {
-        
+        init(image, sr, sc, color);
+        bfs();
+        return this.image;
+    }
+
+    private void bfs() {
+        Pair start = new Pair(this.sr, this.sc);
+        visited[sr][sc] = true;
+        q.add(start);
+
+        Pair temp;
+        while (!q.isEmpty()) {
+            temp = q.poll();
+            image[temp.r][temp.c] = targetColor;
+            updatedQ(temp);
+        }
+    }
+
+        private void updatedQ(Pair currentPair) {
+        int r = currentPair.r;
+        int c= currentPair.c;
+
+        if (0 <= r-1 && !visited[r-1][c] && image[r-1][c] == startColor) {
+            visited[r-1][c] = true;
+            q.add(new Pair(r-1, c));
+        }
+
+        if (r+1 < m && !visited[r+1][c] && image[r+1][c] == startColor) {
+            visited[r+1][c] = true;
+            q.add(new Pair(r+1, c));
+        }
+
+        if (0 <= c-1 && !visited[r][c-1] && image[r][c-1] == startColor) {
+            visited[r][c-1] = true;
+            q.add(new Pair(r, c-1));
+        }
+
+        if (c+1 < n && !visited[r][c+1] && image[r][c+1] == startColor) {
+            visited[r][c+1] = true;
+            q.add(new Pair(r, c+1));
+        }
+    }
+
+
+
+
+    private void init(int[][] image, int sr, int sc, int color) {
+        this.image = image;
+        this.sr = sr;
+        this.sc = sc;
+        this.targetColor = color;
+        this.startColor = image[sr][sc];
+
+        this.m = image.length;
+        this.n = (m == 0) ? 0 : image[0].length;
+
+        this.visited = new boolean[m][n];
+        this.q = new LinkedList<>();
+    }
+
+    private static class Pair {
+        public int r;
+        public int c;
+
+        Pair(int r, int c) {
+            this.r = r;
+            this.c = c;
+        }
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
