@@ -63,8 +63,9 @@ public class HouseRobber {
                 return nums[0];
             }
 
-            init(nums);
-            return Integer.max(maxScore[length - 1], maxScore[length - 2]);
+//            init(nums);
+//            return Integer.max(maxScore[length - 1], maxScore[length - 2]);
+            return init2(nums);
         }
 
         private void init(int[] nums) {
@@ -84,6 +85,23 @@ public class HouseRobber {
                 tempMax = Integer.max(maxScore[i - 2] + nums[i], maxScore[i - 3] + nums[i]);
                 maxScore[i] = Integer.max(tempMax, maxScore[i - 1]);
             }
+        }
+
+        private int init2(int[] nums) {
+            this.length = nums.length;
+            if (length == 0) return 0;
+            if (length == 1) return nums[0];
+
+            int prev2 = nums[0];
+            int prev1 = Math.max(nums[0], nums[1]);
+
+            for (int i = 2; i < length; i++) {
+                int curr = Math.max(prev1, prev2 + nums[i]);
+                prev2 = prev1;
+                prev1 = curr;
+            }
+
+            return prev1;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
