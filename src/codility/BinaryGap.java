@@ -36,5 +36,30 @@ public class BinaryGap {
             }
             return maxGap;
         }
+
+        public int solution2(int N) {
+            int result = 0;
+
+            String binary = Integer.toBinaryString(N);
+            int tempLength = 0;
+            int flag = 0;
+            // System.out.println("String : " + binary);
+            for (Character i : binary.toCharArray()) {
+                if (i == '0' && flag == 1) {
+                    tempLength++;
+                } else if (i == '1') {
+                    flag++;
+                    //    System.out.println("meet first 1");
+                    if (flag == 2) {
+                        flag = 1;
+                        result = Integer.max(tempLength, result);
+                        // System.out.println("meet second 1, lenght : "+ tempLength);
+                        tempLength = 0;
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

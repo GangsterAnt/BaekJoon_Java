@@ -1,7 +1,7 @@
 package hackerRank.oneWeekPreparation;
 
 public class RecursiveDigitSum {
-    {
+
 
         /*
          * Complete the 'superDigit' function below.
@@ -13,7 +13,7 @@ public class RecursiveDigitSum {
          */
 
         public static int superDigit(String n, int k) {
-        // Write your code here
-
-    }
+            // Write your code here
+            return 0;
+        }
 }

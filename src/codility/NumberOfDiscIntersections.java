@@ -34,40 +34,42 @@ N is an integer within the range [0..100,000];
 each element of array A is an integer within the range [0..2,147,483,647].
  */
 
+import java.util.Arrays;
+
 public class NumberOfDiscIntersections {
+/*
+놓쳤던것 : 원 안엔 원이있는경우도 intersect.
+
+ */
+
+    public static void main(String[] args) {
+
+        NumberOfDiscIntersections sut = new NumberOfDiscIntersections();
+
+        System.out.println(sut.solution(new int[]{1, 5, 2, 1, 4, 0}));
+    }
+
 
     public int solution(int[] A) {
-        boolean[][] board = new boolean[A.length][A.length];
+        long[] minArr = new long[A.length];
+        long[] maxArr = new long[A.length];
         int result = 0;
-        for (int i = 0; i < A.length; ++i) {
-            int left = Math.max(i - A[i], 0);
-            int right = A[i] + i;
 
-            for (int j =0; j< A.length; ++j) {
-                if (i == j) {
-                    continue;
-                }
-                if (left <= j && j <= right) {
-                    board[i][j] = true;
+        for (int i =0; i< A.length; ++i) {
+            minArr[i] = i - A[i];
+            maxArr[i] = i + A[i];
+        }
+
+        Arrays.sort(minArr);
+        Arrays.sort(maxArr);
+
+        for (int i = 0; i <A.length; ++i) {
+            for (int ii = i+1; ii < A.length; ++ii) {
+                if (maxArr[i] >= minArr[ii]) {
+                    result ++;
                 }
             }
         }
-
-        for (int i = 0; i < A.length; ++i) {
-            for (int j = 0; j < A.length; ++j) {
-                if (board[i][j] && board[j][i]) {
-                    board[j][i] = false;
-                    result++;
-                }
-            }
-        }
-
-//        for (int i = 0; i < A.length; ++i) {
-//            for (int j = 0; j < A.length; ++j) {
-//                System.out.print(board[i][j] ? "O" : "X");
-//            }
-//            System.out.println();
-//        }
 
         return result;
     }
