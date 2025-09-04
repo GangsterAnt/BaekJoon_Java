@@ -46,6 +46,10 @@ package leetCode.leetcode.editor.en;
 //Queue) Bucket Sort Counting Quickselect 👍 18639 👎 795
 
 
+import java.util.*;
+import java.util.function.BiFunction;
+import java.util.stream.Collectors;
+
 public class TopKFrequentElements {
     public static void main(String[] args) {
         Solution solution = new TopKFrequentElements().new Solution();
@@ -53,9 +57,30 @@ public class TopKFrequentElements {
     
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+        public static final Comparator<Map.Entry<Integer, Integer>> FREQUENCY_SORT =
+                (a, b) -> b.getValue().compareTo(a.getValue());
+
     public int[] topKFrequent(int[] nums, int k) {
-        
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int num : nums) {
+            map.merge(num, 1, Integer::sum);
+        }
+
+        // key-value 쌍을 빈도 기준으로 내림차순 정렬
+        List<Map.Entry<Integer, Integer>> sorted = map.entrySet()
+                .stream()
+                .sorted((a, b) -> b.getValue().compareTo(a.getValue()))
+                .collect(Collectors.toList());
+
+        int[] ans = new int[k];
+        for (int i = 0; i < k; i++) {
+            ans[i] = sorted.get(i).getKey(); // 숫자(key)만 뽑기
+        }
+        return ans;
     }
+
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
