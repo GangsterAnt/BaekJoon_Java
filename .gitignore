@@ -2,7 +2,7 @@ HELP.md
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/codingTest/
+/src/codingTest/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
